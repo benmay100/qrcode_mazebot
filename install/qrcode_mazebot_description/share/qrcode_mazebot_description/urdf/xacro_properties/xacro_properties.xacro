@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:property name="package_name" value="qrcode_mazebot_description" />
+  <xacro:property name="robot_name" value="qrcode_mazebot" />
+
+
+</robot>

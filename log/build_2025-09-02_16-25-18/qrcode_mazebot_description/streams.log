@@ -1,0 +1,55 @@
+[0.108s] Invoking command in '/home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben-may/ros_workspaces/luqman_course_ws/install/vision_rpi_bot:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot_description -- -j24 -l24
+[0.135s] Invoked command in '/home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben-may/ros_workspaces/luqman_course_ws/install/vision_rpi_bot:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot_description -- -j24 -l24
+[0.141s] Invoking command in '/home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben-may/ros_workspaces/luqman_course_ws/install/vision_rpi_bot:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot_description
+[0.146s] -- Install configuration: ""
+[0.146s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//launch
+[0.146s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//launch/gz_empty.launch.py
+[0.146s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//launch/gz_custom.launch.py
+[0.146s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//assets
+[0.146s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//assets/wheel.part
+[0.146s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//assets/chassis.stl
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//assets/chassis.part
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//assets/camera.stl
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//assets/lidar.part
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//assets/wheel.stl
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//assets/camera.part
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//assets/lidar.stl
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/modules
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/modules/lidar.xacro
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/modules/camera.xacro
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/modules/chassis_and_wheels.xacro
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/xacro_properties
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/xacro_properties/xacro_properties.xacro
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/gazebo_tags
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/gazebo_tags/gazebo_plugins.xacro
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/gazebo_tags/gazebo_properties.xacro
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/robot.urdf.xacro
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//yaml
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//yaml/gazebo_bridge.yaml
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//worlds
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//worlds/qr_code_maze_big_world.sdf
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//rviz
+[0.147s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//rviz/config_with-Lidar-and-Camera.rviz
+[0.148s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//models
+[0.148s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//models/qr_code_maze
+[0.148s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//models/qr_code_maze/right.png
+[0.148s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//models/qr_code_maze/stop.png
+[0.148s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//models/qr_code_maze/left.png
+[0.148s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//models/qr_code_maze/qr_code_maze_big.dae
+[0.148s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/ament_index/resource_index/package_run_dependencies/qrcode_mazebot_description
+[0.148s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/ament_index/resource_index/parent_prefix_path/qrcode_mazebot_description
+[0.148s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/environment/ament_prefix_path.sh
+[0.148s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/environment/ament_prefix_path.dsv
+[0.148s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/environment/path.sh
+[0.148s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/environment/path.dsv
+[0.149s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/local_setup.bash
+[0.149s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/local_setup.sh
+[0.149s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/local_setup.zsh
+[0.149s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/local_setup.dsv
+[0.149s] -- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/package.dsv
+[0.149s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/ament_index/resource_index/packages/qrcode_mazebot_description
+[0.149s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/cmake/qrcode_mazebot_descriptionConfig.cmake
+[0.149s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/cmake/qrcode_mazebot_descriptionConfig-version.cmake
+[0.149s] -- Up-to-date: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/package.xml
+[0.150s] Invoked command in '/home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben-may/ros_workspaces/luqman_course_ws/install/vision_rpi_bot:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot_description

@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape document_id a4ea59dba35f5caeb271cde4 -->
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Link lidar -->
+  <link name="lidar_link">
+    <inertial>
+      <origin xyz="-4.82929e-19 1.36409e-18 0.00735149" rpy="0 0 0"/>
+      <mass value="0.027159"/>
+      <inertia ixx="4.77113e-06" ixy="0" ixz="0" iyy="4.77113e-06" iyz="0" izz="8.40399e-06"/>
+    </inertial>
+    <!-- Part lidar -->
+    <visual>
+      <origin xyz="0 -1.53081e-19 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://${package_name}/assets/lidar.stl"/>
+      </geometry>
+      <material name="lidar_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -1.53081e-19 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://${package_name}/assets/lidar.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from chassis to lidar -->
+  <joint name="lidar_joint" type="fixed">
+    <origin xyz="-0.0440219 2.44392e-17 0.09" rpy="0 -0 0"/>
+    <parent link="chassis_link"/>
+    <child link="lidar_link"/>
+  </joint>
+
+</robot>

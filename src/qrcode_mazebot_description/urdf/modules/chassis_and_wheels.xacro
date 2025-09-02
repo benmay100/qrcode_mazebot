@@ -1,0 +1,174 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape document_id a4ea59dba35f5caeb271cde4 -->
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Link base footprint -->
+  <link name="base_footprint"/>
+  <!-- Joint base footprint -->
+  <joint name="base_joint" type="fixed">
+      <parent link="base_footprint" />
+      <child link="chassis_link" />
+      <origin xyz="0 0 0.01" rpy="0 0 0" />
+  </joint>
+
+  <!-- Link chassis -->
+  <link name="chassis_link">
+    <inertial>
+      <origin xyz="-0.00980526 8.1185e-16 0.0392699" rpy="0 0 0"/>
+      <mass value="2.09941"/>
+      <inertia ixx="0.00360261" ixy="0" ixz="0.000634141" iyy="0.00681642" iyz="0" izz="0.00795136"/>
+    </inertial>
+    <!-- Part chassis -->
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://${package_name}/assets/chassis.stl"/>
+      </geometry>
+      <material name="chassis_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://${package_name}/assets/chassis.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <!-- Link rear_right_wheel -->
+  <link name="rear_right_wheel_link">
+    <inertial>
+      <origin xyz="-8.65114e-09 -5.12286e-09 0.0122554" rpy="0 0 0"/>
+      <mass value="0.0478503"/>
+      <inertia ixx="1.60159e-05" ixy="2.44085e-12" ixz="8.19615e-12" iyy="1.60159e-05" iyz="1.09538e-11" izz="2.75064e-05"/>
+    </inertial>
+    <!-- Part rear_right_wheel -->
+    <visual>
+      <origin xyz="0 0 0.0225" rpy="-1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://${package_name}/assets/wheel.stl"/>
+      </geometry>
+      <material name="wheel_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0225" rpy="-1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://${package_name}/assets/wheel.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from chassis to rear_right_wheel -->
+  <joint name="rear_right_wheel_joint" type="continuous">
+    <origin xyz="-0.075 -0.061 0.02" rpy="1.5708 -0 0"/>
+    <parent link="chassis_link"/>
+    <child link="rear_right_wheel_link"/>
+    <axis xyz="0 0 -1"/>
+    <limit effort="100" velocity="100"/>
+  </joint>
+
+  <!-- Link rear_left_wheel -->
+  <link name="rear_left_wheel_link">
+    <inertial>
+      <origin xyz="-8.65114e-09 -5.12286e-09 0.0122554" rpy="0 0 0"/>
+      <mass value="0.0478503"/>
+      <inertia ixx="1.60159e-05" ixy="2.44085e-12" ixz="8.19615e-12" iyy="1.60159e-05" iyz="1.09538e-11" izz="2.75064e-05"/>
+    </inertial>
+    <!-- Part rear_left_wheel -->
+    <visual>
+      <origin xyz="0 0 0.0225" rpy="-1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://${package_name}/assets/wheel.stl"/>
+      </geometry>
+      <material name="wheel_2_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0225" rpy="-1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://${package_name}/assets/wheel.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from chassis to rear_left_wheel -->
+  <joint name="rear_left_wheel_joint" type="continuous">
+    <origin xyz="-0.075 0.061 0.02" rpy="-1.5708 -0 0"/>
+    <parent link="chassis_link"/>
+    <child link="rear_left_wheel_link"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100"/>
+  </joint>
+
+  <!-- Link front_right_wheel -->
+  <link name="front_right_wheel_link">
+    <inertial>
+      <origin xyz="-8.65114e-09 -5.12286e-09 0.0122554" rpy="0 0 0"/>
+      <mass value="0.0478503"/>
+      <inertia ixx="1.60159e-05" ixy="2.44085e-12" ixz="8.19615e-12" iyy="1.60159e-05" iyz="1.09538e-11" izz="2.75064e-05"/>
+    </inertial>
+    <!-- Part front_right_wheel -->
+    <visual>
+      <origin xyz="0 0 0.0225" rpy="-1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://${package_name}/assets/wheel.stl"/>
+      </geometry>
+      <material name="wheel_3_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0225" rpy="-1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://${package_name}/assets/wheel.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from chassis to front_right_wheel -->
+  <joint name="front_right_wheel_joint" type="continuous">
+    <origin xyz="0.075 -0.061 0.02" rpy="1.5708 -0 0"/>
+    <parent link="chassis_link"/>
+    <child link="front_right_wheel_link"/>
+    <axis xyz="0 0 -1"/>
+    <limit effort="100" velocity="100"/>
+  </joint>
+
+  <!-- Link front_left_wheel -->
+  <link name="front_left_wheel_link">
+    <inertial>
+      <origin xyz="-8.65114e-09 -5.12286e-09 0.0122554" rpy="0 0 0"/>
+      <mass value="0.0478503"/>
+      <inertia ixx="1.60159e-05" ixy="2.44085e-12" ixz="8.19615e-12" iyy="1.60159e-05" iyz="1.09538e-11" izz="2.75064e-05"/>
+    </inertial>
+    <!-- Part front_left_wheel -->
+    <visual>
+      <origin xyz="0 0 0.0225" rpy="-1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://${package_name}/assets/wheel.stl"/>
+      </geometry>
+      <material name="wheel_4_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0225" rpy="-1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://${package_name}/assets/wheel.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from chassis to front_left_wheel -->
+  <joint name="front_left_wheel_joint" type="continuous">
+    <origin xyz="0.075 0.061 0.02" rpy="-1.5708 -0 0"/>
+    <parent link="chassis_link"/>
+    <child link="front_left_wheel_link"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100"/>
+  </joint>
+
+</robot>

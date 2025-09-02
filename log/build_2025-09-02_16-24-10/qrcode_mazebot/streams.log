@@ -1,0 +1,42 @@
+[0.398s] Invoking command in '/home/ben-may/ros_workspaces/qrcode_mazebot_ws/src/qrcode_mazebot': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/qrcode_mazebot build --build-base /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot/build install --record /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot/install.log --single-version-externally-managed install_data
+[0.528s] running egg_info
+[0.528s] creating ../../build/qrcode_mazebot/qrcode_mazebot.egg-info
+[0.536s] writing ../../build/qrcode_mazebot/qrcode_mazebot.egg-info/PKG-INFO
+[0.536s] writing dependency_links to ../../build/qrcode_mazebot/qrcode_mazebot.egg-info/dependency_links.txt
+[0.536s] writing entry points to ../../build/qrcode_mazebot/qrcode_mazebot.egg-info/entry_points.txt
+[0.537s] writing requirements to ../../build/qrcode_mazebot/qrcode_mazebot.egg-info/requires.txt
+[0.537s] writing top-level names to ../../build/qrcode_mazebot/qrcode_mazebot.egg-info/top_level.txt
+[0.537s] writing manifest file '../../build/qrcode_mazebot/qrcode_mazebot.egg-info/SOURCES.txt'
+[0.554s] reading manifest file '../../build/qrcode_mazebot/qrcode_mazebot.egg-info/SOURCES.txt'
+[0.554s] writing manifest file '../../build/qrcode_mazebot/qrcode_mazebot.egg-info/SOURCES.txt'
+[0.554s] running build
+[0.554s] running build_py
+[0.554s] creating /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot/build
+[0.554s] creating /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot/build/lib
+[0.554s] creating /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot/build/lib/qrcode_mazebot
+[0.554s] copying qrcode_mazebot/__init__.py -> /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot/build/lib/qrcode_mazebot
+[0.555s] copying qrcode_mazebot/qr_code_maze_driver_v2.py -> /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot/build/lib/qrcode_mazebot
+[0.555s] copying qrcode_mazebot/qr_code_maze_driver_v1.py -> /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot/build/lib/qrcode_mazebot
+[0.555s] running install
+[0.558s] running install_lib
+[0.566s] creating /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/python3.12/site-packages/qrcode_mazebot
+[0.566s] copying /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot/build/lib/qrcode_mazebot/__init__.py -> /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/python3.12/site-packages/qrcode_mazebot
+[0.566s] copying /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot/build/lib/qrcode_mazebot/qr_code_maze_driver_v2.py -> /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/python3.12/site-packages/qrcode_mazebot
+[0.567s] copying /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot/build/lib/qrcode_mazebot/qr_code_maze_driver_v1.py -> /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/python3.12/site-packages/qrcode_mazebot
+[0.567s] byte-compiling /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/python3.12/site-packages/qrcode_mazebot/__init__.py to __init__.cpython-312.pyc
+[0.567s] byte-compiling /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/python3.12/site-packages/qrcode_mazebot/qr_code_maze_driver_v2.py to qr_code_maze_driver_v2.cpython-312.pyc
+[0.569s] byte-compiling /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/python3.12/site-packages/qrcode_mazebot/qr_code_maze_driver_v1.py to qr_code_maze_driver_v1.cpython-312.pyc
+[0.570s] running install_data
+[0.570s] creating /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/share/ament_index
+[0.570s] creating /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/share/ament_index/resource_index
+[0.570s] creating /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/share/ament_index/resource_index/packages
+[0.570s] copying resource/qrcode_mazebot -> /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/share/ament_index/resource_index/packages
+[0.570s] copying package.xml -> /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/share/qrcode_mazebot
+[0.571s] creating /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/share/qrcode_mazebot/assets
+[0.571s] running install_egg_info
+[0.579s] Copying ../../build/qrcode_mazebot/qrcode_mazebot.egg-info to /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/python3.12/site-packages/qrcode_mazebot-0.0.0-py3.12.egg-info
+[0.580s] running install_scripts
+[0.641s] Installing qr_code_maze_driver_v1 script to /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/qrcode_mazebot
+[0.641s] Installing qr_code_maze_driver_v2 script to /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/qrcode_mazebot
+[0.641s] writing list of installed files to '/home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot/install.log'
+[0.654s] Invoked command in '/home/ben-may/ros_workspaces/qrcode_mazebot_ws/src/qrcode_mazebot' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/qrcode_mazebot build --build-base /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot/build install --record /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot/install.log --single-version-externally-managed install_data

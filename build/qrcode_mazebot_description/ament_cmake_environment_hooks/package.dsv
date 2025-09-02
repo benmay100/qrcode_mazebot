@@ -1,0 +1,4 @@
+source;share/qrcode_mazebot_description/local_setup.bash
+source;share/qrcode_mazebot_description/local_setup.dsv
+source;share/qrcode_mazebot_description/local_setup.sh
+source;share/qrcode_mazebot_description/local_setup.zsh

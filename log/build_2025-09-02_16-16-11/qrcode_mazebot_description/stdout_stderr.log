@@ -1,0 +1,68 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Configuring done (0.8s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot_description
+-- Install configuration: ""
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//launch
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//launch/gz_empty.launch.py
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//launch/gz_custom.launch.py
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//assets
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//assets/wheel.part
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//assets/chassis.stl
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//assets/chassis.part
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//assets/camera.stl
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//assets/lidar.part
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//assets/wheel.stl
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//assets/camera.part
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//assets/lidar.stl
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/modules
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/modules/lidar.xacro
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/modules/camera.xacro
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/modules/chassis_and_wheels.xacro
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/xacro_properties
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/xacro_properties/xacro_properties.xacro
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/gazebo_tags
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/gazebo_tags/gazebo_plugins.xacro
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/gazebo_tags/gazebo_properties.xacro
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/robot.urdf.xacro
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//yaml
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//yaml/gazebo_bridge.yaml
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//worlds
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//worlds/qr_code_maze_big_world.sdf
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//rviz
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//rviz/config_with-Lidar-and-Camera.rviz
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//models
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//models/qr_code_maze
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//models/qr_code_maze/right.png
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//models/qr_code_maze/stop.png
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//models/qr_code_maze/left.png
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//models/qr_code_maze/qr_code_maze_big.dae
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/ament_index/resource_index/package_run_dependencies/qrcode_mazebot_description
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/ament_index/resource_index/parent_prefix_path/qrcode_mazebot_description
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/environment/ament_prefix_path.sh
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/environment/ament_prefix_path.dsv
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/environment/path.sh
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/environment/path.dsv
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/local_setup.bash
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/local_setup.sh
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/local_setup.zsh
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/local_setup.dsv
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/package.dsv
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/ament_index/resource_index/packages/qrcode_mazebot_description
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/cmake/qrcode_mazebot_descriptionConfig.cmake
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/cmake/qrcode_mazebot_descriptionConfig-version.cmake
+-- Installing: /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description/package.xml

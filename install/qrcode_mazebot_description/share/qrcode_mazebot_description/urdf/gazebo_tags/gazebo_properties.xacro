@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Gazebo properties for the base link -->
+  <gazebo reference="chassis_link">
+    <mu1 value="0.5"/> <!-- Friction coefficient in the first direction -->
+    <mu2 value="0.5"/> <!-- Friction coefficient in the second direction -->
+  </gazebo>
+
+  <gazebo reference="lidar_link">
+    <mu1 value="0.5"/> <!-- Friction coefficient in the first direction -->
+    <mu2 value="0.5"/> <!-- Friction coefficient in the second direction -->
+  </gazebo>
+
+  <gazebo reference="camera_link">
+    <mu1 value="0.5"/> <!-- Friction coefficient in the first direction -->
+    <mu2 value="0.5"/> <!-- Friction coefficient in the second direction -->
+  </gazebo>
+
+
+  <!-- Gazebo properties for wheel/axle links -->
+  <!-- Rear Right Wheel -->
+  <gazebo reference="rear_right_wheel_link">
+    <mu1 value="1.0"/> <!-- High Friction coefficient for wheels -->
+    <mu2 value="1.0"/> <!-- High Friction coefficient for wheels -->
+    <kp value="1000000.0"/> <!-- Spring stiffness for contact (optional, but good defaults) -->
+    <kd value="0.5"/> <!-- Damping coefficient for contact (optional) -->
+  </gazebo>
+
+  <!-- Front Right Wheel -->
+  <gazebo reference="front_right_wheel_link">
+    <mu1 value="1.0"/> <!-- High Friction coefficient for wheels -->
+    <mu2 value="1.0"/> <!-- High Friction coefficient for wheels -->
+    <kp value="1000000.0"/> <!-- Spring stiffness for contact (optional, but good defaults) -->
+    <kd value="0.5"/> <!-- Damping coefficient for contact (optional) -->
+  </gazebo>
+
+  <!-- Front Left Wheel -->
+  <gazebo reference="front_left_wheel_link">
+    <mu1 value="1.0"/> <!-- High Friction coefficient for wheels -->
+    <mu2 value="1.0"/> <!-- High Friction coefficient for wheels -->
+    <kp value="1000000.0"/> <!-- Spring stiffness for contact (optional, but good defaults) -->
+    <kd value="0.5"/> <!-- Damping coefficient for contact (optional) -->
+  </gazebo>
+
+  <!-- Rear Left Wheel -->
+  <gazebo reference="rear_left_wheel_link">
+    <mu1 value="1.0"/> <!-- High Friction coefficient for wheels -->
+    <mu2 value="1.0"/> <!-- High Friction coefficient for wheels -->
+    <kp value="1000000.0"/> <!-- Spring stiffness for contact (optional, but good defaults) -->
+    <kd value="0.5"/> <!-- Damping coefficient for contact (optional) -->
+  </gazebo>
+
+
+</robot>
