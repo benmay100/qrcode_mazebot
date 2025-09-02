@@ -299,16 +299,20 @@ class QrCodeMazeTester(Node):
         elif self.current_state == "turn_left":
             # Keep publishing the turn command and running the turning_stop_when_parallel function...
             msg.linear.x = 0.0
-            if self.is_turning and self.estimated_corridor_length > 4.00:
-                msg.angular.z = 0.4 # Positive value for left turn. Slowed down for long corridors
+            if self.is_turning and self.estimated_corridor_length > 4.50:
+                msg.angular.z = 0.3 # Positive value for left turn. Slowed down for long corridors
+            elif self.is_turning and self.estimated_corridor_length > 4.00:
+                msg.angular.z = 0.4
             else:
                 msg.angular.z = 0.7
             self.turning_stop_when_parallel()
         elif self.current_state == "turn_right":
             # Keep publishing the turn command and running the turning_stop_when_parallel function...
             msg.linear.x = 0.0
-            if self.is_turning and self.estimated_corridor_length > 4.00:
-                msg.angular.z = -0.4 # Positive value for left turn. Slowed down for long corridors
+            if self.is_turning and self.estimated_corridor_length > 4.50:
+                msg.angular.z = -0.3 # Negative value for right turn. Slowed down for long corridors
+            elif self.is_turning and self.estimated_corridor_length > 4.00:
+                msg.angular.z = -0.4
             else:
                 msg.angular.z = -0.7
             self.turning_stop_when_parallel()
