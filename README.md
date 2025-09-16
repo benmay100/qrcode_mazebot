@@ -2,11 +2,11 @@
 
 # --------------------------------------
 
-# There are three separate drivers:
+# There are three separate drivers, which demonstrate the development journey... (recommended to use V3)
 
 1. qr_code_maze_driver_v1.py | Very basic driver, gets around the maze clumsily and requires lots of corrections
 
-2. qr_code_maze_driver_v2.py | Sligtly more sophisticated, gets around the maze ok, still requires a lot of self correcting
+2. qr_code_maze_driver_v2.py | Slightly more sophisticated, gets around the maze ok, still requires a lot of self correcting
 
 3. qr_code_maze_driver_v3.py | A much more intelligent driver, uses line of best fit and cartesian coordinates to perform proper wall following. Drives down the maze gracefully and requires little to no self correction along the way.
 
