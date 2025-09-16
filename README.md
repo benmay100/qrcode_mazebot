@@ -2,7 +2,7 @@
 
 # --------------------------------------
 
-#There are three separate drivers:
+# There are three separate drivers:
 
 1. qr_code_maze_driver_v1.py | Very basic driver, gets around the maze clumsily and requires lots of corrections
 
