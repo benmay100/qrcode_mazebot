@@ -14,18 +14,18 @@
 
 # To run and launch
 
-Use ROS2 Jazzy
-Gazebo Harmonic
-Rviz2
-Source environment
-ros2 launch qrcode_mazebot_bringup mazebot_bringup_v3.py
+- Use ROS2 Jazzy
+- Gazebo Harmonic
+- Rviz2
+- Source environment
+- "ros2 launch qrcode_mazebot_bringup mazebot_bringup_v3.py"
 
 # --------------------------------------
 
 # For tele-op and testing
 
-ros2 launch qrcode_mazebot_description gz_custom.py 
-or... ros2 launch qrcode_mazebot_description gz_empty.py
+- "ros2 launch qrcode_mazebot_description gz_custom.py" 
+- or... "ros2 launch qrcode_mazebot_description gz_empty.py"
 
 
 
