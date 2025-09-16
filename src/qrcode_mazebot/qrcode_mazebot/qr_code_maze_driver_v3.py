@@ -23,6 +23,10 @@ DIRECT_RIGHT_START = 0 # Rightmost 10 points
 DIRECT_RIGHT_END = 10 # Rightmost 10 points
 DIRECT_LEFT_START = 630 # Leftmost 10 points
 DIRECT_LEFT_END = 640 # Leftmost 10 points
+LEFT_OF_FRONT_START = 400 # 120 point segment left of the front rays (for spotting corridor openings)
+LEFT_OF_FRONT_END = 520 # 120 point segment left of the front rays (for spotting corridor openings)
+RIGHT_OF_FRONT_START = 120 # 120 point segment right of the front rays (for spotting corridor openings)
+RIGHT_OF_FRONT_END = 240 # 120 point segment right of the front rays (for spotting corridor openings)
 
 # Import the helper class from the other file
 from .robot_control_logic import RobotControl
@@ -55,16 +59,16 @@ class QrCodeMazeDriver(Node):
         self.average_direct_front_data = 10 #set to 10 to start to avoid triggering "read_qr" status before lidar readings come through
         self.average_direct_left_data = self.corridor_width /2 #set to  centralised value for start of program
         self.average_direct_right_data = self.corridor_width /2 #set to  centralised value for start of program
+        self.average_left_of_front_data = 0.0 #A segment slightly off to the left but still poiting quite forward (used for establishing when a corridor is opening out)
+        self.average_right_of_front_data = 0.0 #A segment slightly off to the left but still poiting quite forward (used for establishing when a corridor is opening out)
         self.estimated_corridor_length = 0.0 #Only used for estimated length of corridor the robot is TURNING into!
         
         #States, flags, timings etc
         self.current_state = "drive"
         self.current_position = "corridor" #Options 'corridor' 'corridor_after_left_turn' 'corridor_after_right_turn' 'corridor_opening_left' 'corridor_opening_right' 'corner_left' 'corner_right' 'end_of_maze' 'undetermined'
         self.last_qr_code = "" # Store the last detected QR code to avoid continuous detection
-        self.reverse_turn_correction_phase = 0 #Complex reverse turns compose of two phases, 1 and 2 (and 0 for when not being used)
-        self.turn_duration = 1.5 # Time in seconds to complete each phase of the complex reverse turn (for corrections). You'll need to tune this value.
         self.is_lateral_correcting = False #A flag to show when robot is performing lateral correction (i.e. making sure driving centrally down corridor)
-        self.is_angular_correcting = False #A flag to show when robot is performing angular correction (i.e. making sure it is aligned parallel to corridor)
+        self.is_qr_correcting = False #A flag to show when robot is performing qr code read correction (i.e. making sure it is aligned parallel to corridor)
         self.is_turning = False
 
         # Create publishers, subscribers, services, etc. here
@@ -73,6 +77,10 @@ class QrCodeMazeDriver(Node):
         self.cmd_vel_publisher_ = self.create_publisher(Twist, "cmd_vel", 10)
         self.cmd_vel_timer_ = self.create_timer(0.1, self.callback_cmd_vel_publisher)
         self.cv_bridge=CvBridge()
+        
+        # Create a timer that calls the log_positions function every 0.5 seconds
+        self.timer_period = 0.5  # seconds
+        self.timer = self.create_timer(self.timer_period, self.log_positions)
 
 
     #Add callback functions here
@@ -87,10 +95,14 @@ class QrCodeMazeDriver(Node):
         direct_front_data_raw = self.lidar_data[DIRECT_FRONT_START:DIRECT_FRONT_END]
         direct_right_data_raw = self.lidar_data[DIRECT_RIGHT_START:DIRECT_RIGHT_END]
         direct_left_data_raw = self.lidar_data[DIRECT_LEFT_START:DIRECT_LEFT_END][::-1] #this reverses the order, which is needed for left data arrays!
+        right_of_front_data_raw = self.lidar_data[RIGHT_OF_FRONT_START:RIGHT_OF_FRONT_END]
+        left_of_front_data_raw = self.lidar_data[LEFT_OF_FRONT_START:LEFT_OF_FRONT_END][::-1] #this reverses the order, which is needed for left data arrays!
         # 2. Filter out 'inf' values and get formatted data AND averages!
-        direct_front_data, self.average_direct_front_data = self.RobotControl.filter_out_inf_and_calculate_average(direct_front_data_raw)
-        direct_right_data, self.average_direct_right_data = self.RobotControl.filter_out_inf_and_calculate_average(direct_right_data_raw)
-        direct_left_data, self.average_direct_left_data = self.RobotControl.filter_out_inf_and_calculate_average(direct_left_data_raw)
+        self.average_direct_front_data = self.RobotControl.filter_out_inf_and_calculate_average(direct_front_data_raw)
+        self.average_direct_right_data = self.RobotControl.filter_out_inf_and_calculate_average(direct_right_data_raw)
+        self.average_direct_left_data = self.RobotControl.filter_out_inf_and_calculate_average(direct_left_data_raw)
+        self.average_right_of_front_data = self.RobotControl.filter_out_inf_and_calculate_average(right_of_front_data_raw)
+        self.average_left_of_front_data = self.RobotControl.filter_out_inf_and_calculate_average(left_of_front_data_raw)
         # 4. Calculate error for the ANGLE of the robot (see robot_control_logic.py for how this all works). Positive angle error means skewed right, Negative angle error means skewed left.
         self.angular_error, self.right_wall_slope, self.right_wall_angle, self.left_wall_slope, self.left_wall_angle = self.RobotControl._calculate_angle_error(
             RIGHT_WALL_INDICES, 
@@ -110,38 +122,7 @@ class QrCodeMazeDriver(Node):
             self.corridor_width, 
             self.lateral_error,
             self.current_position) 
-        
-        #6. Print results and logs for debugging
-        if self.current_position not in ["end_of_maze"]:
-            self.get_logger().info("==============================================")
-            self.get_logger().info("CURRENT POSITION: ["+self.current_position+"]")
-            self.get_logger().info("CURRENT STATE: ["+self.current_state+"]")
-            self.get_logger().info("==============================================")
-            self.get_logger().info(f"Average direct front distance: {self.average_direct_front_data:.2f} meters")
-            self.get_logger().info(f"Average direct right distance: {self.average_direct_right_data:.2f} meters")
-            self.get_logger().info(f"Average direct left distance: {self.average_direct_left_data:.2f} meters")
-            if self.lateral_error > 0.01:
-                self.get_logger().info(f"Lateral Error: {self.lateral_error:.2f} meters, too far right!")
-            elif self.lateral_error < -0.01:
-                self.get_logger().info(f"Lateral Error: {self.lateral_error:.2f} meters, too far left!")
-            else:   
-                self.get_logger().info(f"Lateral Error: {self.lateral_error:.2f} meters, CENTRALISED!")
-            self.get_logger().info("__________________________________________")
-            if self.right_wall_slope is not None:
-                self.get_logger().info(f"Right Wall: Slope={self.right_wall_slope:.3f}, Angle={self.right_wall_angle:.2f} rads")
-            else:
-                self.get_logger().info("Right Wall: Not detected.")
-            if self.left_wall_slope is not None:
-                self.get_logger().info(f"Left Wall:  Slope={self.left_wall_slope:.3f}, Angle={self.left_wall_angle:.2f} rads")
-            else:
-                self.get_logger().info("Left Wall: Not detected.")
-            if self.angular_error > 0.01:
-                self.get_logger().info(f"Angular Error ={self.angular_error:.2f} rads - skewed Right!")
-            elif self.angular_error < -0.01:
-                self.get_logger().info(f"Angular Error ={self.angular_error:.2f} rads - skewed Left!")
-            else:
-                self.get_logger().info(f"Angular Error ={self.angular_error:.2f} rads - Angled CENTRALLY!")
-        
+                
 
     def callback_camera_subscriber(self, msg):
         # Only process camera frames if the robot is in the 'read_qr' state
@@ -170,7 +151,8 @@ class QrCodeMazeDriver(Node):
                         self.get_logger().info("Unknown QR code. Sticking with last instruction.")
             else: # No QR code was found
                 self.get_logger().warn("No QR code was found")
-                self.no_qr_code_found_correction_attempt() #perform correction function to try and find it!
+                self.current_state = "fine_tune" #perform correction function in 'fine_tune' case to try and find it!
+                self.is_qr_correcting = True
 
 
     def callback_cmd_vel_publisher(self):
@@ -180,7 +162,10 @@ class QrCodeMazeDriver(Node):
         self.current_position = self.RobotControl._establish_position(
             self.average_direct_front_data, 
             self.average_direct_right_data, 
-            self.average_direct_left_data, 
+            self.average_direct_left_data,
+            self.average_right_of_front_data,
+            self.average_left_of_front_data,
+            self.lateral_error, 
             self.corridor_width, 
             self.current_position, 
             self.is_turning)
@@ -192,7 +177,7 @@ class QrCodeMazeDriver(Node):
                 Kp_angular = 3.5
                 
                 match self.current_position:
-                    case "corridor" | "corridor_after_left_turn" | "corridor_after_right_turn" | "corridor_opening_left" | "corridor_opening_right" | "end_of_maze":
+                    case "corridor" | "corridor_after_left_turn" | "corridor_after_right_turn" | "corridor_opening_left" | "corridor_opening_right":
                         if abs(self.lateral_error) >= 0.04:
                             self.is_lateral_correcting = True
                             msg.angular.z = self.lateral_error * Kp_lateral
@@ -206,12 +191,12 @@ class QrCodeMazeDriver(Node):
                             self.is_lateral_correcting = False
                             msg.angular.z = 0.00
                         
-                        if self.current_position in ["corridor", "corridor_after_left_turn", "corridor_after_right_turn"]:
-                            msg.linear.x = 0.65
-                        else:
+                        if self.current_position in ["corridor_opening_left", "corridor_opening_right"]: #Slows down as approaching corner
                             msg.linear.x = 0.45
+                        else:
+                            msg.linear.x = 0.65
                     
-                    case "corner_left" | "corner_right":
+                    case "corner_left" | "corner_right" | "end_of_maze":
                         msg.linear.x = 0.00
                         msg.angular.z = 0.00
                         self.get_logger().warn(f"Forward distance is now {self.average_direct_front_data:.2f} meters, stopping and...")
@@ -225,7 +210,7 @@ class QrCodeMazeDriver(Node):
             case "fine_tune":  #Handles fine tuning before reading a QR code, and after a turn
                 self.get_logger().warn("fine tuning...")
                 #For cases when about to read a QR code
-                if not self.is_turning:
+                if not self.is_turning and not self.is_qr_correcting:
                     if self.average_direct_front_data < 0.33:
                         msg.linear.x = -0.2
                     elif self.average_direct_front_data >= 0.38:
@@ -233,16 +218,31 @@ class QrCodeMazeDriver(Node):
                     else:
                         msg.linear.x = 0.0
                         if abs(self.angular_error) > 0.03:
-                            msg.angular.z = self.angular_error * 3
+                            msg.angular.z = self.angular_error * 2
                         else:
                             msg.angular.z = 0.00
                             self.current_state = "read_qr"
                             self.get_logger().info("current_state set to 'read_qr'")
-                #For cases when just completed a turn
+                #For cases when going in for second attempt to read a QR code
+                elif not self.is_turning and self.is_qr_correcting:
+                    #reverse until back to over 0.5 metres away
+                    if 0.33 < self.average_direct_front_data <= 0.38:
+                        msg.linear.x = -0.2
+                        msg.angular.z = 0.0 #Keep steering straight
+                    else:
+                        msg.linear.x = 0.0
+                        if abs(self.angular_error) > 0.03:
+                            msg.angular.z = self.angular_error * 2
+                        else:
+                            msg.angular.z = 0.00
+                            self.is_qr_correcting = False
+                            self.current_state = "fine_tune" #Set state back to usual fine tune to go in for another attempt at reading
+                            self.get_logger().info("Corrective fine-tune done, now reverting to normal fine-tune to attempt another read at QR code")
+                #For cases when just completed a turn and making sure aligned nicely before driving off down next corridor
                 else:
                     msg.linear.x = 0.0
                     if abs(self.angular_error) > 0.03:
-                            msg.angular.z = self.angular_error * 3
+                            msg.angular.z = self.angular_error * 2
                     else:
                         msg.angular.z = 0.00
                         self.is_turning = False
@@ -291,6 +291,38 @@ class QrCodeMazeDriver(Node):
                 # self.get_logger().warn("Unknown state")
                 
         self.cmd_vel_publisher_.publish(msg)
+
+
+    def log_positions(self):
+        if self.current_position not in ["end_of_maze"]:
+            self.get_logger().info("==============================================")
+            self.get_logger().info("CURRENT POSITION: ["+self.current_position+"]")
+            self.get_logger().info("CURRENT STATE: ["+self.current_state+"]")
+            self.get_logger().info("==============================================")
+            self.get_logger().info(f"Average direct front distance: {self.average_direct_front_data:.2f} meters")
+            self.get_logger().info(f"Average direct right distance: {self.average_direct_right_data:.2f} meters")
+            self.get_logger().info(f"Average direct left distance: {self.average_direct_left_data:.2f} meters")
+            if self.lateral_error > 0.01:
+                self.get_logger().info(f"Lateral Error: {self.lateral_error:.2f} meters, too far right!")
+            elif self.lateral_error < -0.01:
+                self.get_logger().info(f"Lateral Error: {self.lateral_error:.2f} meters, too far left!")
+            else:   
+                self.get_logger().info(f"Lateral Error: {self.lateral_error:.2f} meters, CENTRALISED!")
+            self.get_logger().info("__________________________________________")
+            # if self.right_wall_slope is not None:
+            #     self.get_logger().info(f"Right Wall: Slope={self.right_wall_slope:.3f}, Angle={self.right_wall_angle:.2f} rads")
+            # else:
+            #     self.get_logger().info("Right Wall: Not detected.")
+            # if self.left_wall_slope is not None:
+            #     self.get_logger().info(f"Left Wall:  Slope={self.left_wall_slope:.3f}, Angle={self.left_wall_angle:.2f} rads")
+            # else:
+            #     self.get_logger().info("Left Wall: Not detected.")
+            if self.angular_error > 0.01:
+                self.get_logger().info(f"Angular Error ={self.angular_error:.2f} rads - skewed Right!")
+            elif self.angular_error < -0.01:
+                self.get_logger().info(f"Angular Error ={self.angular_error:.2f} rads - skewed Left!")
+            else:
+                self.get_logger().info(f"Angular Error ={self.angular_error:.2f} rads - Angled CENTRALLY!")
 
     #---------------------------------------------------------------
 
