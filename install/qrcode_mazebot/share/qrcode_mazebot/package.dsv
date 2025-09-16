@@ -4,6 +4,3 @@ source;share/qrcode_mazebot/hook/pythonpath.sh
 source;share/qrcode_mazebot/hook/ament_prefix_path.ps1
 source;share/qrcode_mazebot/hook/ament_prefix_path.dsv
 source;share/qrcode_mazebot/hook/ament_prefix_path.sh
-source;../../build/qrcode_mazebot/share/qrcode_mazebot/hook/pythonpath_develop.ps1
-source;../../build/qrcode_mazebot/share/qrcode_mazebot/hook/pythonpath_develop.dsv
-source;../../build/qrcode_mazebot/share/qrcode_mazebot/hook/pythonpath_develop.sh
