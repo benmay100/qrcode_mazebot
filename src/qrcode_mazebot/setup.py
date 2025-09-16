@@ -25,6 +25,7 @@ setup(
         'console_scripts': [
             "qr_code_maze_driver_v1 = qrcode_mazebot.qr_code_maze_driver_v1:main",
             "qr_code_maze_driver_v2 = qrcode_mazebot.qr_code_maze_driver_v2:main",
+            "qr_code_maze_driver_v3 = qrcode_mazebot.qr_code_maze_driver_v3:main"
         ],
     },
 )

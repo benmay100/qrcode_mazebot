@@ -1,0 +1,17 @@
+running develop
+running egg_info
+writing qrcode_mazebot.egg-info/PKG-INFO
+writing dependency_links to qrcode_mazebot.egg-info/dependency_links.txt
+writing entry points to qrcode_mazebot.egg-info/entry_points.txt
+writing requirements to qrcode_mazebot.egg-info/requires.txt
+writing top-level names to qrcode_mazebot.egg-info/top_level.txt
+reading manifest file 'qrcode_mazebot.egg-info/SOURCES.txt'
+writing manifest file 'qrcode_mazebot.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/python3.12/site-packages/qrcode-mazebot.egg-link (link to .)
+Installing qr_code_maze_driver_v1 script to /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/qrcode_mazebot
+Installing qr_code_maze_driver_v2 script to /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/qrcode_mazebot
+Installing qr_code_maze_driver_v3 script to /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/qrcode_mazebot
+
+Installed /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot
+running symlink_data

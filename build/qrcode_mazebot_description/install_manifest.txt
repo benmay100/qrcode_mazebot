@@ -16,6 +16,7 @@
 /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/gazebo_tags/gazebo_properties.xacro
 /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//urdf/robot.urdf.xacro
 /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//yaml/gazebo_bridge.yaml
+/home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//worlds/qr_code_maze_big_world_alignment_testing.sdf
 /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//worlds/qr_code_maze_big_world.sdf
 /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//rviz/config_with-Lidar-and-Camera.rviz
 /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_description/share/qrcode_mazebot_description//models/qr_code_maze/right.png

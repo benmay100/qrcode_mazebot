@@ -1,0 +1,19 @@
+[0.364s] Invoking command in '/home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot/build --no-deps symlink_data
+[0.510s] running develop
+[0.595s] running egg_info
+[0.603s] writing qrcode_mazebot.egg-info/PKG-INFO
+[0.603s] writing dependency_links to qrcode_mazebot.egg-info/dependency_links.txt
+[0.603s] writing entry points to qrcode_mazebot.egg-info/entry_points.txt
+[0.603s] writing requirements to qrcode_mazebot.egg-info/requires.txt
+[0.603s] writing top-level names to qrcode_mazebot.egg-info/top_level.txt
+[0.619s] reading manifest file 'qrcode_mazebot.egg-info/SOURCES.txt'
+[0.619s] writing manifest file 'qrcode_mazebot.egg-info/SOURCES.txt'
+[0.628s] running build_ext
+[0.628s] Creating /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/python3.12/site-packages/qrcode-mazebot.egg-link (link to .)
+[0.628s] Installing qr_code_maze_driver_v1 script to /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/qrcode_mazebot
+[0.628s] Installing qr_code_maze_driver_v2 script to /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/qrcode_mazebot
+[0.629s] Installing qr_code_maze_driver_v3 script to /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/qrcode_mazebot
+[0.629s] 
+[0.629s] Installed /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot
+[0.629s] running symlink_data
+[0.644s] Invoked command in '/home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ben-may/ros_workspaces/qrcode_mazebot_ws/build/qrcode_mazebot/build --no-deps symlink_data

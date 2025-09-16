@@ -11,7 +11,13 @@ setup.py
 qrcode_mazebot/__init__.py
 qrcode_mazebot/qr_code_maze_driver_v1.py
 qrcode_mazebot/qr_code_maze_driver_v2.py
+qrcode_mazebot/qr_code_maze_driver_v3.py
+qrcode_mazebot/robot_control_logic.py
+qrcode_mazebot.egg-info/PKG-INFO
+qrcode_mazebot.egg-info/SOURCES.txt
+qrcode_mazebot.egg-info/dependency_links.txt
+qrcode_mazebot.egg-info/entry_points.txt
+qrcode_mazebot.egg-info/requires.txt
+qrcode_mazebot.egg-info/top_level.txt
+qrcode_mazebot.egg-info/zip-safe
 resource/qrcode_mazebot
-test/test_copyright.py
-test/test_flake8.py
-test/test_pep257.py

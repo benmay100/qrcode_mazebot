@@ -1,3 +1,4 @@
+/home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_bringup/share/qrcode_mazebot_bringup//launch/mazebot_bringup_v3.launch.py
 /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_bringup/share/qrcode_mazebot_bringup//launch/mazebot_bringup_v2.launch.py
 /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_bringup/share/qrcode_mazebot_bringup//launch/mazebot_bringup_v1.launch.py
 /home/ben-may/ros_workspaces/qrcode_mazebot_ws/install/qrcode_mazebot_bringup/share/ament_index/resource_index/package_run_dependencies/qrcode_mazebot_bringup
